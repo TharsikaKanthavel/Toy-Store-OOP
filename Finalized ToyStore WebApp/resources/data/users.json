@@ -1,0 +1,41 @@
+[ {
+  "id" : "a6c332aa-de4a-486b-bc38-ac6216514612",
+  "username" : "admin",
+  "password" : "Ayushya00",
+  "email" : "admin@toystore.com",
+  "role" : "ADMIN",
+  "firstName" : "Admin",
+  "lastName" : "User",
+  "fullName" : "Admin User",
+  "admin" : true
+}, {
+  "id" : "1cd75eba-4a12-448e-bab2-4452103f45ab",
+  "username" : "ajayajay",
+  "password" : "ajay12",
+  "email" : "ajay12@gmail.com",
+  "role" : "CUSTOMER",
+  "firstName" : "Ajay ",
+  "lastName" : "Ajay",
+  "fullName" : "Ajay  Ajay",
+  "admin" : false
+}, {
+  "id" : "33d52027-5905-41db-8219-68ea8e6a2dfa",
+  "username" : "sangeerthana",
+  "password" : "sangeerthana11",
+  "email" : "sangeerthana11@gmail.com",
+  "role" : "CUSTOMER",
+  "firstName" : "sangeerthana",
+  "lastName" : "SLIIT",
+  "fullName" : "sangeerthana SLIIT",
+  "admin" : false
+}, {
+  "id" : "52fcb298-bedc-498d-967a-b9516160aa46",
+  "username" : "tharsika",
+  "password" : "Tharsika11",
+  "email" : "tharsika@gmail.com",
+  "role" : "ADMIN",
+  "firstName" : "Tharsika",
+  "lastName" : "tharsika",
+  "fullName" : "Tharsika tharsika",
+  "admin" : true
+} ]

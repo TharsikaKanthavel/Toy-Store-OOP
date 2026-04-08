@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+
+<!-- Footer Fragment -->
+<footer th:fragment="footer" class="footer">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-4 mb-4 mb-lg-0">
+                <h4 class="footer-title">
+                    <i class="bi bi-stars me-2"></i>Toy Store
+                </h4>
+                <p class="text-white-50">
+                    Providing high-quality toys for children of all ages. Our mission is to inspire creativity,
+                    learning, and joy through play.
+                </p>
+                <div class="social-icons">
+                    <a href="#" aria-label="Facebook"><i class="bi bi-facebook"></i></a>
+                    <a href="#" aria-label="Instagram"><i class="bi bi-instagram"></i></a>
+                    <a href="#" aria-label="Twitter"><i class="bi bi-twitter"></i></a>
+                    <a href="#" aria-label="YouTube"><i class="bi bi-youtube"></i></a>
+                </div>
+            </div>
+
+            <div class="col-lg-2 col-md-4 mb-4 mb-md-0">
+                <h5 class="footer-title">Shop</h5>
+                <ul class="footer-links">
+                    <li><a href="/toys">All Toys</a></li>
+                    <li><a href="/toys?category=EDUCATIONAL">Educational</a></li>
+                    <li><a href="/toys?category=GAMES">Games & Puzzles</a></li>
+                    <li><a href="/toys?category=DOLLS">Dolls</a></li>
+                    <li><a href="/toys?category=ACTION_FIGURES">Action Figures</a></li>
+                </ul>
+            </div>
+
+            <div class="col-lg-2 col-md-4 mb-4 mb-md-0">
+                <h5 class="footer-title">Ages</h5>
+                <ul class="footer-links">
+                    <li><a href="/toys?minAge=0">0-2 Years</a></li>
+                    <li><a href="/toys?minAge=3">3-5 Years</a></li>
+                    <li><a href="/toys?minAge=6">6-8 Years</a></li>
+                    <li><a href="/toys?minAge=9">9-12 Years</a></li>
+                    <li><a href="/toys?minAge=13">13+ Years</a></li>
+                </ul>
+            </div>
+
+            <div class="col-lg-4 col-md-4">
+                <h5 class="footer-title">Contact Us</h5>
+                <ul class="footer-links">
+                    <li><i class="bi bi-geo-alt me-2"></i> 123 Toy Street, Playville, PL 12345</li>
+                    <li><i class="bi bi-envelope me-2"></i> info@toystore.com</li>
+                    <li><i class="bi bi-telephone me-2"></i> (123) 456-7890</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="copyright">
+            <p>&copy; 2023 Toy Store. All rights reserved.</p>
+        </div>
+    </div>
+</footer>
+
+</body>
+</html>

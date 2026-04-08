@@ -1,0 +1,397 @@
+/* Reset
+======================================*/
+/* https://meyerweb.com/eric/tools/css/reset/ */
+html,body,div,span,applet,object,iframe,
+h1,h2,h3,h4,h5,h6,p,blockquote,pre,
+a,abbr,acronym,address,big,cite,code,
+del,dfn,em,img,ins,kbd,q,s,samp,
+small,strike,strong,sub,sup,tt,var,
+b,u,i,center,
+dl,dt,dd,ol,ul,li,
+fieldset,form,label,legend,
+table,caption,tbody,tfoot,thead,tr,th,td,
+article,aside,canvas,details,figcaption,figure,
+footer,header,hgroup,menu,nav,section,summary,
+time,mark,audio,video{
+    margin:0;
+    padding:0;
+    border:0;
+    outline:0;
+    font-size:100%;
+    font:inherit;
+    vertical-align:baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article,aside,details,figcaption,figure,
+footer,header,hgroup,menu,nav,section{
+    display:block;
+}
+body{
+    line-height:1;
+}
+ol,ul{
+    list-style:none;
+}
+blockquote,q{
+    quotes:none;
+}
+blockquote:before,blockquote:after,
+q:before,q:after{
+    content:’’;
+    content:none;
+}
+
+/* remember to highlight inserts somehow! */
+ins{
+    text-decoration:none;
+	 background-color: yellow;
+}
+del{
+    text-decoration:line-through;
+}
+
+table{
+    border-collapse:collapse;
+    border-spacing:0;
+}
+
+/* Body Contnet
+======================================*/
+    
+@import url(https://fonts.googleapis.com/css?family=Roboto:400,300,500);
+
+body {
+  margin: 0 auto;
+	width: 90%;
+	max-width: 1240px;
+	font-family: 'Roboto', sans-serif;
+	background-color: #f6f6f6;
+
+}
+
+/* Font Sizes
+======================================*/
+
+h1 {
+	font-size: 21px;
+	font-weight: 300;
+	}
+
+h5 {
+	font-weight: 500;
+	line-height: 1.7em;
+}
+
+h6 {
+	color: #666;
+	font-size: 14px;
+}
+
+/* Layout
+======================================*/
+
+.productFilter {
+  display: flex;
+	padding: 30px 0;
+  }
+
+.sort {
+  display: flex;
+	align-self: flex-end;
+}
+
+.collectionSort {
+  display: flex;
+	flex-direction: column;
+  }
+
+.collectionSort:first-child {
+	padding-right: 20px;
+  }
+
+#productListWrapper{
+  display: flex;
+	width: 100%;
+  }
+
+#productList{
+  display: flex;
+	order: 2;
+	justify-content: flex-start;
+	width: 75%;
+  }
+
+.products {
+  display: flex;
+	flex-wrap: wrap;
+	flex:75%;
+  }
+
+.productCard {
+  display: flex;
+	flex-direction: column;
+	padding: 20%;
+	flex: 15%;
+	background-color: #92c9de;
+	width: 100%;
+    height: 300px;
+    border-radius: 20px;
+  }
+
+.productPrice{	
+    color: #b31515;
+   
+  }
+
+.productImage img {
+	width: 100%;
+    height: 230px;
+    border-radius: 20px;
+  }
+
+.productInfo {
+  margin-top: auto;
+	padding-bottom: 20px;
+	text-align: center;
+  }
+
+.sidebar{
+  order: 1;
+	display: flex;
+	flex-direction: column;
+	padding: 2%;
+	background-color: #FFF;
+	margin: 0 1%; 
+  }
+
+.sidebar ul li a{
+  color: #666;
+	font-size: .75em;
+	font-weight: 500;
+	line-height: 2em;
+	text-transform: uppercase;
+	text-decoration: none;
+  }
+
+.sidebar h5{
+	font-weight: 400;
+  }
+
+.sidebar ul li a:hover{
+	text-decoration: underline;
+  }
+
+.sidebarLinks{
+  width: 75%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  padding-top:15px;
+  }
+
+/* Filtering
+======================================*/
+
+label {
+  display:flex;
+  width:100%;
+  justify-content: center;
+  background:#ffffff;
+  box-shadow: 0 1px 3px 
+   rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+  color:#666;
+  padding:0 10%;
+  margin:0 0 10px 0;
+  font-size: 10px;
+  font-weight: 500;
+  line-height: 2em;
+  text-transform: uppercase;
+  text-align:center;
+  cursor:pointer;
+}
+
+input[type="radio"] {
+    display:none;
+}
+
+input[type="radio"][id="blue"]:checked + label {
+  background: skyblue;
+  color: white;
+}
+
+input[type="radio"][id="red"]:checked + label {
+  background-color: indianred;
+	color: white;
+}
+
+input[type="radio"][id="green"]:checked + label {
+  background-color: forestgreen;
+	color: white;
+}
+
+input[type="radio"][id="pink"]:checked + label {
+  background-color: pink;
+ color: black;
+}
+
+input[type="radio"][id="purple"]:checked + label {
+  background-color: purple;
+  color: white;
+}
+
+input[type="radio"][id="yellow"]:checked + label {
+  background-color: yellow;
+  color: black;
+}
+
+
+input[type="radio"][id="blue"]:checked ~ .red, 
+input[type="radio"][id="blue"]:checked ~ .green,
+input[type="radio"][id="blue"]:checked ~ .pink,
+input[type="radio"][id="blue"]:checked ~ .purple,
+input[type="radio"][id="blue"]:checked ~ .yellow
+{
+ width:0;
+  height:0;
+  padding:0;
+  margin:0;
+  opacity:0;
+}
+
+input[type="radio"][id="red"]:checked ~ .products .productCard card .blue, 
+input[type="radio"][id="red"]:checked ~ .green,
+input[type="radio"][id="red"]:checked ~ .pink,
+input[type="radio"][id="red"]:checked ~ .purple,
+input[type="radio"][id="red"]:checked ~ .yellow
+{
+  width:0;
+  height:0;
+  padding:0;
+  margin:0;
+  opacity:0;
+}
+
+input[type="radio"][id="green"]:checked ~ .blue, 
+input[type="radio"][id="green"]:checked ~ .red,
+input[type="radio"][id="green"]:checked ~ .pink,
+input[type="radio"][id="green"]:checked ~ .purple,
+input[type="radio"][id="green"]:checked ~ .yellow
+{
+  width:0;
+  height:0;
+  padding:0;
+  margin:0;
+  opacity:0;
+}
+
+input[type="radio"][id="pink"]:checked ~ .blue, 
+input[type="radio"][id="pink"]:checked ~ .red,
+input[type="radio"][id="pink"]:checked ~ .green,
+input[type="radio"][id="pink"]:checked ~ .purple,
+input[type="radio"][id="pink"]:checked ~ .yellow
+{
+  width:0;
+  height:0;
+  padding:0;
+  margin:0;
+  opacity:0;
+}
+
+input[type="radio"][id="purple"]:checked ~ .blue, 
+input[type="radio"][id="purple"]:checked ~ .red,
+input[type="radio"][id="purple"]:checked ~ .green,
+input[type="radio"][id="purple"]:checked ~ .pink,
+input[type="radio"][id="purple"]:checked ~ .yellow
+{
+  width:0;
+  height:0;
+  padding:0;
+  margin:0;
+  opacity:0;
+}
+
+input[type="radio"][id="yellow"]:checked ~ .blue, 
+input[type="radio"][id="yellow"]:checked ~ .red,
+input[type="radio"][id="yellow"]:checked ~ .green,
+input[type="radio"][id="yellow"]:checked ~ .pink,
+input[type="radio"][id="yellow"]:checked ~ .purple
+{
+  width:0;
+  height:0;
+  padding:0;
+  margin:0;
+  opacity:0;
+}
+
+.card {
+  display: flex;
+  width:23%;
+  transition:all 1s;
+  margin:0.5%;
+  padding:0.5%;
+  width:23%;
+  transition:all 1s;
+  margin:0.5%;
+  padding:0.5%;
+}
+
+.green:hover{
+  background-color: forestgreen;
+  }
+
+.blue:hover {
+  background-color: skyblue;
+}
+
+.red:hover {
+  background-color: indianred;
+}
+.pink:hover {
+  background-color: pink;
+}
+.purple:hover{
+	background-color: purple;
+}
+.yellow:hover{
+	background-color: yellow;
+}
+
+/*
+======================================*/
+/* Media Queries
+======================================*/
+/* 
+======================================*/
+
+@media ( max-width: 960px ) {
+	.productCard {
+		flex: 20%;
+	}
+	.products .productCard:first-child, 
+	.products .productCard:nth-child(2) {
+		flex: 46%;
+	}
+	.sidebar{
+		flex: 10%;
+	}
+}
+
+@media ( max-width: 680px ) {
+	.productCard {
+		flex: 46%;
+	}
+}
+.productCard:hover {
+    transform: scale(1.05);
+}
+
+.productLink {
+    text-decoration: none;
+    color: inherit;
+    display: block;
+    padding: 1px;
+}
+image{
+  width: 100%;
+  height: 200px;
+}

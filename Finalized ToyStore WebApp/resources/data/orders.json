@@ -1,0 +1,50 @@
+{
+  "1cd75eba-4a12-448e-bab2-4452103f45ab" : [ {
+    "orderId" : "1773ad0a-b1ec-4b88-88f2-6af28ae1d088",
+    "userId" : "1cd75eba-4a12-448e-bab2-4452103f45ab",
+    "cartItems" : [ {
+      "toyId" : "toy-002",
+      "quantity" : 1,
+      "price" : 19.99
+    }, {
+      "toyId" : "toy-001",
+      "quantity" : 1,
+      "price" : 30.0
+    }, {
+      "toyId" : "toy-005",
+      "quantity" : 1,
+      "price" : 29.99
+    }, {
+      "toyId" : "toy-003",
+      "quantity" : 1,
+      "price" : 34.99
+    } ],
+    "totalPrice" : 114.97,
+    "orderDate" : [ 2025, 5, 24, 23, 17, 11, 611155000 ]
+  }, {
+    "orderId" : "874865e0-acd8-4984-b347-4d77b30d72f9",
+    "userId" : "1cd75eba-4a12-448e-bab2-4452103f45ab",
+    "cartItems" : [ {
+      "toyId" : "toy-001",
+      "quantity" : 1,
+      "price" : 30.0
+    } ],
+    "totalPrice" : 30.0,
+    "orderDate" : [ 2025, 5, 25, 6, 11, 45, 727905000 ]
+  } ],
+  "33d52027-5905-41db-8219-68ea8e6a2dfa" : [ {
+    "orderId" : "f753b729-d173-4344-afe6-786f021710b2",
+    "userId" : "33d52027-5905-41db-8219-68ea8e6a2dfa",
+    "cartItems" : [ {
+      "toyId" : "toy-013",
+      "quantity" : 1,
+      "price" : 32.99
+    }, {
+      "toyId" : "toy-014",
+      "quantity" : 1,
+      "price" : 26.99
+    } ],
+    "totalPrice" : 59.980000000000004,
+    "orderDate" : [ 2025, 5, 24, 23, 18, 11, 327493000 ]
+  } ]
+}

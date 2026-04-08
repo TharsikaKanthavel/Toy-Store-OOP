@@ -1,0 +1,10 @@
+T001|Superhero Action Figure|Poseable action figure with cape and accessories|19.99|Action Figures|6-8 years|25|https://images.unsplash.com/photo-1608278047522-58806a6ac85b?w=300|true
+T002|Classic Building Blocks|Set of 100 colorful interlocking blocks|29.99|Building Blocks|3-5 years|30|https://images.unsplash.com/photo-1587654780291-39c9404d746b?w=300|true
+T003|Advanced Construction Set|300-piece set with special connectors and gears|49.99|Building Blocks|9-12 years|12|https://images.unsplash.com/photo-1558060370-d644479cb6f7?w=300|true
+T004|Science Lab Kit|Beginner chemistry set with 20 safe experiments|39.99|Educational|9-12 years|8|https://images.unsplash.com/photo-1532094349884-543bc11b234d?w=300|true
+T005|Soccer Ball|Junior size soccer ball with pump|16.99|Outdoor|6-8 years|40|https://images.unsplash.com/photo-1575361204480-aadea25e6e68?w=300|true
+T006|Teddy Bear|Soft classic teddy bear with ribbon|19.99|Plush Toys|0-2 years|30|https://images.unsplash.com/photo-1588414734732-660b07304ddb?w=300|true
+T007|Stuffed Dinosaur|Plush green dinosaur with textured details|22.99|Plush Toys|3-5 years|20|https://images.unsplash.com/photo-1609372332255-611485350f25?w=300|true
+T008|Remote Control Car|Fast RC car with rechargeable battery|39.99|Vehicles|9-12 years|15|https://images.unsplash.com/photo-1609708536965-6e5b915b195b?w=300|true
+T009|Wooden Train Set|25-piece wooden train set with track|29.99|Vehicles|3-5 years|5|https://images.unsplash.com/photo-1596461404969-9ae70f2830c1?w=300|true
+T010|Pikachu Figure Doll|Pikachu is a yellow mouse Pokémon. It has long ears with black tips. It has red cheeks that store electricity. It has brown stripes on its back.|27.99|Action Figures|3-5 years|15|https://images.pexels.com/photos/1716861/pexels-photo-1716861.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2|true

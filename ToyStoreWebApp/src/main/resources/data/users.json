@@ -1,0 +1,41 @@
+[ {
+  "id" : "a6c332aa-de4a-486b-bc38-ac6216514612",
+  "username" : "admin",
+  "password" : "Ayushya00",
+  "email" : "admin@toystore.com",
+  "role" : "ADMIN",
+  "firstName" : "Admin",
+  "lastName" : "User",
+  "fullName" : "Admin User",
+  "admin" : true
+}, {
+  "id" : "d36e9214-dd1e-48c2-8d9d-cb4f32e5c2f9",
+  "username" : "ayushsarma78",
+  "password" : "Ayushya00",
+  "email" : "sarmayush47@gmail.com",
+  "role" : "CUSTOMER",
+  "firstName" : "ayush",
+  "lastName" : "Sarma",
+  "fullName" : "ayush Sarma",
+  "admin" : false
+}, {
+  "id" : "02f9b16b-7310-4720-89b9-45efdfb9e121",
+  "username" : "s.vipooshan ",
+  "password" : "vipoo&82",
+  "email" : "vipooshanvipoo9@gmail.com",
+  "role" : "CUSTOMER",
+  "firstName" : "vipooshan",
+  "lastName" : "vipooshan",
+  "fullName" : "vipooshan vipooshan",
+  "admin" : false
+}, {
+  "id" : "089b23cf-0026-42a7-aa46-073c45f1a4c2",
+  "username" : "vipoo",
+  "password" : "vipoo12234",
+  "email" : "it24102869@my.sliit.lk",
+  "role" : "CUSTOMER",
+  "firstName" : "vipooshan",
+  "lastName" : "s",
+  "fullName" : "vipooshan s",
+  "admin" : false
+} ]

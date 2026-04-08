@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+
+<!-- Header Fragment -->
+<header th:fragment="header">
+    <nav class="navbar navbar-expand-lg navbar-light py-3 sticky-top bg-white">
+        <div class="container">
+            <a class="navbar-brand" href="/">
+                <i class="bi bi-stars me-2"></i>Toy Store
+            </a>
+
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav me-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="/">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/toys">All Toys</a>
+                    </li>
+                    <li class="nav-item" th:if="${session.user != null}">
+                        <a class="nav-link" th:href="@{/orders}">Orders</a>
+                    </li>
+                    <li class="nav-item" th:if="${session.user != null}">
+                        <a class="nav-link" th:href="@{/cart}">Cart</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            Categories
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <li><a class="dropdown-item" href="/toys?category=ACTION_FIGURES">Action Figures</a></li>
+                            <li><a class="dropdown-item" href="/toys?category=DOLLS">Dolls</a></li>
+                            <li><a class="dropdown-item" href="/toys?category=EDUCATIONAL">Educational</a></li>
+                            <li><a class="dropdown-item" href="/toys?category=ELECTRONIC">Electronic</a></li>
+                            <li><a class="dropdown-item" href="/toys?category=GAMES">Games & Puzzles</a></li>
+                            <li><a class="dropdown-item" href="/toys?category=OUTDOOR">Outdoor</a></li>
+                            <li><a class="dropdown-item" href="/toys?category=PLUSH">Plush Toys</a></li>
+                            <li><a class="dropdown-item" href="/toys?category=VEHICLES">Vehicles</a></li>
+                            <li><a class="dropdown-item" href="/toys?category=CONSTRUCTION">Construction</a></li>
+                            <li><a class="dropdown-item" href="/toys?category=ART_CRAFT">Arts & Crafts</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="ageDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            Age Groups
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="ageDropdown">
+                            <li><a class="dropdown-item" href="/toys?minAge=0">0-2 Years</a></li>
+                            <li><a class="dropdown-item" href="/toys?minAge=3">3-5 Years</a></li>
+                            <li><a class="dropdown-item" href="/toys?minAge=6">6-8 Years</a></li>
+                            <li><a class="dropdown-item" href="/toys?minAge=9">9-12 Years</a></li>
+                            <li><a class="dropdown-item" href="/toys?minAge=13">13+ Years</a></li>
+                        </ul>
+                    </li>
+                </ul>
+
+                <form id="searchForm" class="d-flex search-form me-2">
+                    <span class="search-icon">
+                        <i class="bi bi-search"></i>
+                    </span>
+                    <input class="form-control me-2" type="search" name="search" placeholder="Search toys..." aria-label="Search">
+                    <button class="btn btn-outline-primary" type="submit">Search</button>
+                </form>
+
+                <!-- User Authentication Links -->
+                <div class="d-flex align-items-center">
+                    <!-- If user is logged in -->
+                    <div th:if="${session.user != null}" class="dropdown">
+                        <button class="btn btn-link text-decoration-none dropdown-toggle" type="button" id="userDropdown" data-bs-toggle="dropdown" aria-expanded="false">
+                            <i class="bi bi-person-circle me-1"></i>
+                            <span th:text="${session.user.username}">Username</span>
+                            <span th:if="${session.isAdmin}" class="badge bg-danger ms-1">Admin</span>
+                        </button>
+                        <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="userDropdown">
+                            <li><a class="dropdown-item" th:href="@{/user/profile}"><i class="bi bi-person me-2"></i>My Profile</a></li>
+                            <li th:if="${session.isAdmin}"><a class="dropdown-item" th:href="@{/user/admin}"><i class="bi bi-shield-lock me-2"></i>Admin Dashboard</a></li>
+                            <li><hr class="dropdown-divider"></li>
+                            <li><a class="dropdown-item" th:href="@{/user/logout}"><i class="bi bi-box-arrow-right me-2"></i>Logout</a></li>
+                        </ul>
+                    </div>
+
+                    <!-- If user is not logged in -->
+                    <div th:unless="${session.user != null}" class="d-flex">
+                        <a th:href="@{/user/login}" class="btn btn-outline-primary me-2">
+                            <i class="bi bi-box-arrow-in-right me-1"></i>Login
+                        </a>
+                        <a th:href="@{/user/register}" class="btn btn-primary">
+                            <i class="bi bi-person-plus me-1"></i>Register
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+</header>
+
+</body>
+</html>

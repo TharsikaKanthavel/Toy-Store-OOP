@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Shopping Cart - ToyLand</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css" rel="stylesheet">
+  <link th:href="@{/css/style.css}" rel="stylesheet">
+</head>
+<body>
+
+<!-- Header -->
+<div th:replace="fragments/header :: header"></div>
+
+<!-- Main Content -->
+<div class="container py-5">
+  <h2 class="mb-4">Shopping Cart</h2>
+
+  <!-- Empty Cart Message -->
+  <div th:if="${#lists.isEmpty(cartItems)}" class="text-center py-5">
+    <div class="empty-cart mb-4">
+      <i class="bi bi-cart-x display-1 text-muted"></i>
+    </div>
+    <h3>Your cart is empty</h3>
+    <p class="text-muted mb-4">Looks like you haven't added any toys to your cart yet.</p>
+    <a href="/toys" class="btn btn-primary px-4">Continue Shopping</a>
+  </div>
+
+  <!-- Cart Items Table -->
+  <div th:if="${not #lists.isEmpty(cartItems)}" class="row">
+    <div class="col-lg-8">
+      <div class="card shadow-sm mb-4">
+        <div class="card-body p-0">
+          <div class="table-responsive">
+            <table class="table table-hover align-middle mb-0">
+              <thead class="table-light">
+              <tr>
+                <th scope="col" class="ps-4">Product</th>
+                <th scope="col" class="text-center">Price</th>
+                <th scope="col" class="text-center">Quantity</th>
+                <th scope="col" class="text-end">Total</th>
+                <th scope="col" class="text-center pe-4">Actions</th>
+              </tr>
+              </thead>
+              <tbody>
+              <tr th:each="item : ${cartItems}">
+                <td class="ps-4">
+                  <div class="d-flex align-items-center">
+                    <div class="flex-shrink-0">
+                      <img th:src="${item.toy.imageUrl}" alt="Toy Image" width="50" height="50" class="img-thumbnail">
+                    </div>
+                    <div class="ms-3">
+                      <h6 class="mb-0" th:text="${item.toy.name}">Toy Name</h6>
+                      <small class="text-muted" th:text="${item.toy.category + ' | ' + item.toy.ageGroup}">
+                        Category | Age Group
+                      </small>
+                    </div>
+                  </div>
+                </td>
+                <td class="text-center" th:text="${'$' + item.toy.price}">$29.99</td>
+                <td class="text-center">
+                  <div class="quantity-control">
+                    <button class="btn btn-sm btn-outline-secondary quantity-btn quantity-decrease-btn"
+                            th:data-toy-id="${item.toy.id}"
+                            th:disabled="${item.quantity <= 1}">-</button>
+                    <span class="quantity-value" th:text="${item.quantity}">1</span>
+                    <button class="btn btn-sm btn-outline-secondary quantity-btn quantity-increase-btn"
+                            th:data-toy-id="${item.toy.id}"
+                            th:disabled="${item.quantity >= item.toy.stockQuantity}">+</button>
+                  </div>
+                </td>
+                <td class="text-end item-total" th:text="${'$' + item.totalPrice}">$29.99</td>
+                <td class="text-center pe-4">
+                  <button class="btn btn-sm btn-outline-danger remove-cart-item-btn"
+                          th:data-toy-id="${item.toy.id}">
+                    <i class="bi bi-trash"></i>
+                  </button>
+                </td>
+              </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+
+      <!-- Cart Actions -->
+      <div class="d-flex justify-content-between align-items-center mb-4">
+        <a href="/toys" class="btn btn-outline-primary">
+          <i class="bi bi-arrow-left"></i> Continue Shopping
+        </a>
+        <button id="clear-cart-btn" class="btn btn-outline-danger">
+          <i class="bi bi-trash"></i> Clear Cart
+        </button>
+      </div>
+    </div>
+
+    <!-- Order Summary -->
+    <div class="col-lg-4">
+      <div class="card shadow-sm mb-4">
+        <div class="card-header bg-primary text-white">
+          <h5 class="mb-0">Order Summary</h5>
+        </div>
+        <div class="card-body">
+          <div class="d-flex justify-content-between mb-2">
+            <span>Subtotal:</span>
+            <span id="cart-subtotal" th:text="${'$' + totalPrice}">$29.99</span>
+          </div>
+          <div class="d-flex justify-content-between mb-2">
+            <span>Shipping:</span>
+            <span id="cart-shipping" th:text="${totalPrice > 50 ? 'Free' : '$4.99'}">$4.99</span>
+          </div>
+          <hr>
+          <div class="d-flex justify-content-between mb-3">
+            <strong>Total:</strong>
+            <strong id="cart-total" th:text="${'$' + (totalPrice > 50 ? totalPrice : totalPrice + 4.99)}">$34.98</strong>
+          </div>
+
+          <!-- Checkout Button (not functional in this demo) -->
+          <div class="d-grid">
+            <button class="btn btn-success" id="checkout-btn">
+              <i class="bi bi-credit-card me-2"></i> Proceed to Checkout
+            </button>
+          </div>
+
+          <!-- Free Shipping Alert -->
+          <div class="alert alert-info small mt-3 mb-0" th:if="${totalPrice <= 50}">
+            <i class="bi bi-info-circle"></i>
+            Add <strong th:text="${'$' + (50 - totalPrice)}">$20.01</strong> more to your cart to get FREE shipping!
+          </div>
+
+          <div class="alert alert-success small mt-3 mb-0" th:if="${totalPrice > 50}">
+            <i class="bi bi-check-circle"></i>
+            You've qualified for FREE shipping!
+          </div>
+        </div>
+      </div>
+
+      <!-- Payment Methods (for display only) -->
+      <div class="card shadow-sm mb-4">
+        <div class="card-body">
+          <h6 class="mb-3">We Accept</h6>
+          <div class="d-flex gap-2">
+                        <span class="payment-icon">
+                            <i class="bi bi-credit-card"></i>
+                        </span>
+            <span class="payment-icon">
+                            <i class="bi bi-paypal"></i>
+                        </span>
+            <span class="payment-icon">
+                            <i class="bi bi-wallet2"></i>
+                        </span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Footer -->
+<div th:replace="fragments/footer :: footer"></div>
+
+<!-- Toast Notification Container -->
+<div class="toast-container position-fixed bottom-0 end-0 p-3">
+  <div id="cart-toast" class="toast" role="alert" aria-live="assertive" aria-atomic="true">
+    <div class="toast-header">
+      <strong class="me-auto">Shopping Cart</strong>
+      <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
+    </div>
+    <div class="toast-body">
+      Cart updated successfully!
+    </div>
+  </div>
+</div>
+
+<!-- Modal for Checkout (not functional in this demo) -->
+<div class="modal fade" id="checkout-modal" tabindex="-1" aria-labelledby="checkoutModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="checkoutModalLabel">Checkout</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <p>This is a demo application. The checkout functionality is not implemented.</p>
+        <p>In a real application, this would connect to a payment gateway.</p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- JavaScript -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+<script th:src="@{/js/main.js}"></script>
+<script th:src="@{/js/cart.js}"></script>
+
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    // Set up cart controls when DOM is loaded
+    setupCartControls();
+
+    // Checkout button (show modal in this demo)
+    const checkoutBtn = document.getElementById('checkout-btn');
+    if (checkoutBtn) {
+      checkoutBtn.addEventListener('click', function() {
+        const checkoutModal = new bootstrap.Modal(document.getElementById('checkout-modal'));
+        checkoutModal.show();
+      });
+    }
+  });
+</script>
+
+</body>
+</html>

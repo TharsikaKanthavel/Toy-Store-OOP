@@ -1,0 +1,125 @@
+/* Additional styles for rewards page */
+.rewards-container {
+    max-width: 800px;
+    padding: 2rem;
+    background-color: #fff9f9;
+    border-radius: 15px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    position: relative;
+    overflow: hidden;
+    margin: 2rem auto;
+}
+
+.rewards-header {
+    text-align: center;
+    margin-bottom: 2rem;
+    color: #ff6b6b;
+}
+
+.rewards-points {
+    background: linear-gradient(135deg, #ff9a9e 0%, #fad0c4 100%);
+    padding: 1.5rem;
+    border-radius: 10px;
+    text-align: center;
+    margin-bottom: 2rem;
+    color: white;
+    font-size: 1.2rem;
+    box-shadow: 0 3px 10px rgba(255,105,107,0.3);
+}
+
+.points-display {
+    font-size: 3rem;
+    font-weight: bold;
+    margin: 0.5rem 0;
+}
+
+.rewards-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 1.5rem;
+    margin-bottom: 2rem;
+}
+
+.reward-card {
+    background: white;
+    border-radius: 10px;
+    padding: 1.5rem;
+    box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+    transition: transform 0.3s;
+    text-align: center;
+    border: 2px solid #ffd6d6;
+}
+
+.reward-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 5px 15px rgba(255,105,107,0.2);
+}
+
+.reward-card img {
+    width: 100px;
+    height: 100px;
+    object-fit: contain;
+    margin-bottom: 1rem;
+    border-radius: 60px;
+}
+
+.reward-points {
+    background-color: #ff6b6b;
+    color: white;
+    padding: 0.3rem 0.8rem;
+    border-radius: 20px;
+    display: inline-block;
+    margin: 0.5rem 0;
+    font-weight: bold;
+}
+
+.redeem-btn {
+    background: #ff9a9e;
+    color: white;
+    border: none;
+    padding: 0.5rem 1rem;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.3s;
+    margin-top: 0.5rem;
+}
+
+.redeem-btn:hover {
+    background: #ff6b6b;
+}
+
+.toy-decoration {
+    position: absolute;
+    width: 80px;
+    opacity: 0.7;
+    z-index: -1;
+}
+
+.toy1 {
+    top: 20px;
+    left: 20px;
+}
+
+.toy2 {
+    bottom: 20px;
+    right: 20px;
+}
+
+.how-it-works {
+    background-color: #f8f8f8;
+    padding: 1.5rem;
+    border-radius: 10px;
+    margin-top: 2rem;
+}
+.logo {
+    font-size: 24px;
+    font-weight: bold;
+    color: white;
+    text-decoration: none;
+}
+
+.logo img {
+    height: 50px;
+    vertical-align: middle;
+    border-radius: 50px;
+}

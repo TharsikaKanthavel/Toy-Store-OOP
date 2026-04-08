@@ -1,0 +1,163 @@
+[ {
+  "id" : "toy-001",
+  "name" : "Super Action Heros",
+  "description" : "Poseable action figure with 20 points of articulation. Comes with multiple accessories and weapons. Perfect for imaginative play and collecting.",
+  "price" : 30.0,
+  "ageGroup" : 6,
+  "quantity" : 15,
+  "category" : "ACTION_FIGURES",
+  "imageUrl" : "https://images.pexels.com/photos/7809123/pexels-photo-7809123.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
+}, {
+  "id" : "toy-002",
+  "name" : "Classic Wooden Blocks",
+  "description" : "Set of 50 colorful wooden building blocks in various shapes and sizes. Great for developing motor skills and creativity in young children.",
+  "price" : 19.99,
+  "ageGroup" : 3,
+  "quantity" : 20,
+  "category" : "EDUCATIONAL",
+  "imageUrl" : "https://images.pexels.com/photos/3661356/pexels-photo-3661356.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
+}, {
+  "id" : "toy-003",
+  "name" : "Galaxy Explorer Spaceship",
+  "description" : "Build your own spaceship with this 200-piece building set. Features light-up engines, opening cockpit, and detachable landing module.",
+  "price" : 34.99,
+  "ageGroup" : 9,
+  "quantity" : 8,
+  "category" : "BUILDING_SETS",
+  "imageUrl" : "https://images.pexels.com/photos/18127551/pexels-photo-18127551/free-photo-of-boxes-with-astronaut-figurines.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
+}, {
+  "id" : "toy-004",
+  "name" : "Junior Doctor Kit",
+  "description" : "Pretend play medical kit with stethoscope, thermometer, syringe, and other tools. Encourages role play and helps children understand healthcare.",
+  "price" : 15.99,
+  "ageGroup" : 3,
+  "quantity" : 12,
+  "category" : "EDUCATIONAL",
+  "imageUrl" : "https://images.pexels.com/photos/4491759/pexels-photo-4491759.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
+}, {
+  "id" : "toy-005",
+  "name" : "Strategy Master Board Game",
+  "description" : "Classic strategy board game for 2-4 players. Develop critical thinking skills while having fun with family and friends. Average playtime: 60 minutes.",
+  "price" : 29.99,
+  "ageGroup" : 13,
+  "quantity" : 10,
+  "category" : "BOARD_GAMES",
+  "imageUrl" : "https://images.pexels.com/photos/16253637/pexels-photo-16253637/free-photo-of-close-up-of-woman-moving-a-chess-figure.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
+}, {
+  "id" : "toy-006",
+  "name" : "Plush Teddy Bear",
+  "description" : "Super soft huggable teddy bear made with premium materials. Hypoallergenic and machine washable. Perfect for cuddling at bedtime.",
+  "price" : 14.99,
+  "ageGroup" : 0,
+  "quantity" : 25,
+  "category" : "PLUSH_TOYS",
+  "imageUrl" : "https://images.pexels.com/photos/20705865/pexels-photo-20705865/free-photo-of-baby-with-teddy-bears-on-blanket.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
+}, {
+  "id" : "toy-007",
+  "name" : "RC Racing Car",
+  "description" : "High-speed remote control car with responsive controls and durable construction. Features LED lights and can perform stunts and flips.",
+  "price" : 39.99,
+  "ageGroup" : 6,
+  "quantity" : 7,
+  "category" : "ELECTRONIC",
+  "imageUrl" : "https://cdn.pixabay.com/photo/2013/07/13/11/44/car-158548_1280.png"
+}, {
+  "id" : "toy-008",
+  "name" : "Fashion Designer Doll",
+  "description" : "Poseable fashion doll with 5 outfits and accessories. Includes fashion design sketchbook and fabric swatches for creative play.",
+  "price" : 22.99,
+  "ageGroup" : 6,
+  "quantity" : 14,
+  "category" : "DOLLS",
+  "imageUrl" : "https://images.pexels.com/photos/5795425/pexels-photo-5795425.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
+}, {
+  "id" : "toy-009",
+  "name" : "Outdoor Adventure Set",
+  "description" : "Complete outdoor exploration kit with binoculars, compass, magnifying glass, and bug container. Perfect for young explorers and nature lovers.",
+  "price" : 18.99,
+  "ageGroup" : 6,
+  "quantity" : 9,
+  "category" : "OUTDOOR",
+  "imageUrl" : "https://images.pexels.com/photos/3932965/pexels-photo-3932965.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
+}, {
+  "id" : "toy-010",
+  "name" : "Musical Keyboard",
+  "description" : "Beginner's electronic keyboard with 37 keys, 100 sounds, and 50 demo songs. Features recording function and headphone jack for quiet practice.",
+  "price" : 45.99,
+  "ageGroup" : 9,
+  "quantity" : 5,
+  "category" : "ELECTRONIC",
+  "imageUrl" : "https://images.pexels.com/photos/10565724/pexels-photo-10565724.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
+}, {
+  "id" : "toy-011",
+  "name" : "Dinosaur Excavation Kit",
+  "description" : "Dig up and assemble a realistic dinosaur skeleton. Includes tools, brush, and educational booklet about prehistoric creatures.",
+  "price" : 16.99,
+  "ageGroup" : 9,
+  "quantity" : 11,
+  "category" : "EDUCATIONAL",
+  "imageUrl" : "https://images.pexels.com/photos/8014484/pexels-photo-8014484.jpeg?auto=compress&cs=tinysrgb&w=1200"
+}, {
+  "id" : "toy-012",
+  "name" : "Baby's First Blocks",
+  "description" : "Soft fabric blocks with different textures, colors, and sounds. Perfect for sensory development in infants and babies.",
+  "price" : 12.99,
+  "ageGroup" : 0,
+  "quantity" : 18,
+  "category" : "EDUCATIONAL",
+  "imageUrl" : "https://images.pexels.com/photos/8923957/pexels-photo-8923957.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
+}, {
+  "id" : "toy-013",
+  "name" : "Cooperative Adventure Game",
+  "description" : "Family board game where players work together to overcome challenges. Promotes teamwork and problem-solving skills. 2-6 players.",
+  "price" : 32.99,
+  "ageGroup" : 9,
+  "quantity" : 6,
+  "category" : "BOARD_GAMES",
+  "imageUrl" : "https://images.pexels.com/photos/8430088/pexels-photo-8430088.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
+}, {
+  "id" : "toy-014",
+  "name" : "Superhero Costume Set",
+  "description" : "High-quality costume with cape, mask, and wristbands. Machine washable and durable for everyday superhero adventures.",
+  "price" : 26.99,
+  "ageGroup" : 3,
+  "quantity" : 8,
+  "category" : "ROLE_PLAY",
+  "imageUrl" : "https://cdn.pixabay.com/photo/2014/04/02/14/05/superhero-306111_1280.png"
+}, {
+  "id" : "toy-015",
+  "name" : "Science Experiment Kit",
+  "description" : "Perform 50+ amazing science experiments with this comprehensive kit. Includes lab equipment and detailed instruction manual.",
+  "price" : 28.99,
+  "ageGroup" : 9,
+  "quantity" : 7,
+  "category" : "EDUCATIONAL",
+  "imageUrl" : "https://m.media-amazon.com/images/I/818eRP4CCUL._AC_UF894,1000_QL80_.jpg"
+}, {
+  "id" : "dac450ad-b9b0-42bc-9026-11d1db118254",
+  "name" : "Barbie doll",
+  "description" : "Who is Barbie? Barbie is an 11-inch- (29-cm-) tall plastic doll with the figure of an adult woman that was originally modeled on the Lilli doll (produced in West Germany from 1955 to 1964), a risqué gag gift for men. The Barbie target demographic is young children",
+  "price" : 40.0,
+  "ageGroup" : 3,
+  "quantity" : 30,
+  "category" : "DOLLS",
+  "imageUrl" : "https://lk-live-21.slatic.net/kf/S17176d6a7e094d518d8a609c03f2c1c0K.jpg"
+}, {
+  "id" : "2ac555d0-0383-4008-9303-2c9b1ffe63b2",
+  "name" : "Toy Guns",
+  "description" : "Toy Guns means any imitation of any original firearm that was manufactured, designed and produced since 1898, including water guns, replica non-guns, air-soft guns firing non-metallic projectiles, and B-B, paint-ball, and pellet-firing air guns that expel a projectile through the force of air pressure, or any other ...",
+  "price" : 50.0,
+  "ageGroup" : 13,
+  "quantity" : 35,
+  "category" : "ACTION_FIGURES",
+  "imageUrl" : "https://rukminim2.flixcart.com/image/850/1000/kjhgzgw0-0/toy-weapon/n/v/f/mp5-toy-gun-for-kids-with-real-smoke-effect-vibration-light-original-imafzfnxnuyezfgt.jpeg?q=90&crop=false"
+}, {
+  "id" : "42989a9a-da29-49dc-b407-a712df50f901",
+  "name" : "Archery Toys",
+  "description" : "Archery is a bow and arrow sport that uses a bow and arrow to shoot at a target. The target often consists of ten concentric circles, and points are awarded based on which circle the bow lands in. Archery can be an individual activity/sport. It can also be a team sport.",
+  "price" : 25.0,
+  "ageGroup" : 13,
+  "quantity" : 50,
+  "category" : "ROLE_PLAY",
+  "imageUrl" : "https://m.media-amazon.com/images/S/aplus-media-library-service-media/b5ec326b-e107-4d29-8a30-01f9617f1357.__CR0,0,970,600_PT0_SX970_V1___.jpg"
+} ]

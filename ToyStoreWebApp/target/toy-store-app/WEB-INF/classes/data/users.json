@@ -1,0 +1,21 @@
+[ {
+  "id" : "a6c332aa-de4a-486b-bc38-ac6216514612",
+  "username" : "admin",
+  "password" : "Ayushya00",
+  "email" : "admin@toystore.com",
+  "role" : "ADMIN",
+  "firstName" : "Admin",
+  "lastName" : "User",
+  "fullName" : "Admin User",
+  "admin" : true
+}, {
+  "id" : "d36e9214-dd1e-48c2-8d9d-cb4f32e5c2f9",
+  "username" : "ayushsarma78",
+  "password" : "Ayushya00",
+  "email" : "sarmayush47@gmail.com",
+  "role" : "CUSTOMER",
+  "firstName" : "ayush",
+  "lastName" : "Sarma",
+  "fullName" : "ayush Sarma",
+  "admin" : false
+} ]

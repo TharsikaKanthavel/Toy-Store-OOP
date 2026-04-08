@@ -1,0 +1,249 @@
+/* customer.css - Enhanced Version */
+:root {
+    --primary: #ff6b6b;
+    --secondary: #4cc9f0;
+    --accent: #ffd166;
+    --light: #f7fff7;
+    --dark: #292f36;
+    --text: #333;
+    --text-light: #777;
+}
+
+/* Dashboard - Glass Morphism */
+.dashboard {
+    background: rgba(255, 255, 255, 0.8);
+    backdrop-filter: blur(10px);
+    border-radius: 20px;
+    padding: 30px;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+/* Profile Section - 3D Card */
+.profile-section {
+    background: white;
+    border-radius: 15px;
+    padding: 30px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+    transform-style: preserve-3d;
+    perspective: 1000px;
+    transition: all 0.3s;
+    position: relative;
+    overflow: hidden;
+}
+
+.profile-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, var(--primary), var(--secondary));
+    opacity: 0.05;
+    z-index: -1;
+}
+
+.profile-section:hover {
+    transform: translateY(-5px) rotateX(2deg);
+    box-shadow: 0 15px 35px rgba(0,0,0,0.15);
+}
+
+.profile-avatar {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 5px solid white;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+    transition: all 0.3s;
+}
+
+.profile-section:hover .profile-avatar {
+    transform: scale(1.05);
+    box-shadow: 0 15px 35px rgba(0,0,0,0.2);
+}
+
+/* Order History - Interactive Table */
+.order-history {
+    background: white;
+    border-radius: 15px;
+    padding: 30px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+    transition: all 0.3s;
+}
+
+.order-history:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 35px rgba(0,0,0,0.15);
+}
+
+.order-table {
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 0;
+}
+
+.order-table th {
+    background: linear-gradient(135deg, var(--primary), var(--secondary));
+    color: white;
+    padding: 15px;
+    text-align: left;
+    position: sticky;
+    top: 0;
+}
+
+.order-table tr {
+    transition: all 0.3s;
+}
+
+.order-table tr:nth-child(even) {
+    background-color: rgba(245, 245, 245, 0.5);
+}
+
+.order-table tr:hover {
+    background-color: rgba(255, 107, 107, 0.1);
+    transform: scale(1.005);
+}
+
+.order-table td {
+    padding: 12px 15px;
+    border-bottom: 1px solid rgba(0,0,0,0.05);
+}
+
+/* Status Badges - Animated */
+.status-badge {
+    display: inline-block;
+    padding: 5px 10px;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    font-weight: 600;
+    transition: all 0.3s;
+}
+
+.status-processing {
+    background-color: #fff3cd;
+    color: #856404;
+    animation: pulse 2s infinite;
+}
+
+.status-shipped {
+    background-color: #cce5ff;
+    color: #004085;
+}
+
+.status-delivered {
+    background-color: #d4edda;
+    color: #155724;
+}
+
+@keyframes pulse {
+    0% { box-shadow: 0 0 0 0 rgba(255, 193, 7, 0.4); }
+    70% { box-shadow: 0 0 0 10px rgba(255, 193, 7, 0); }
+    100% { box-shadow: 0 0 0 0 rgba(255, 193, 7, 0); }
+}
+
+/* Wishlist - 3D Flip Cards */
+.wishlist-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 20px;
+}
+
+.wishlist-item {
+    perspective: 1000px;
+    height: 300px;
+}
+
+.wishlist-item-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    transition: transform 0.6s;
+    transform-style: preserve-3d;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    border-radius: 10px;
+}
+
+.wishlist-item:hover .wishlist-item-inner {
+    transform: rotateY(180deg);
+}
+
+.wishlist-item-front,
+.wishlist-item-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    border-radius: 10px;
+    background: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+.wishlist-item-back {
+    background: linear-gradient(135deg, var(--primary), var(--secondary));
+    color: white;
+    transform: rotateY(180deg);
+}
+
+.wishlist-image {
+    width: 120px;
+    height: 120px;
+    object-fit: contain;
+    margin-bottom: 15px;
+    transition: all 0.3s;
+}
+
+.wishlist-item:hover .wishlist-image {
+    transform: scale(1.1);
+}
+
+/* Floating Elements */
+body::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url('https://cdn.pixabay.com/photo/2017/07/03/20/17/colorful-2468874_1280.jpg') center/cover;
+    opacity: 0.05;
+    z-index: -1;
+    pointer-events: none;
+    animation: float 20s linear infinite alternate;
+}
+
+/* Action Buttons - Interactive */
+.action-btn {
+    padding: 8px 15px;
+    border-radius: 5px;
+    font-weight: 600;
+    transition: all 0.3s;
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.view-btn {
+    background-color: var(--secondary);
+    color: white;
+}
+
+.view-btn:hover {
+    background-color: #3aa8cc;
+    transform: translateY(-2px);
+}
+
+.remove-btn {
+    background-color: #f8d7da;
+    color: #721c24;
+}
+
+.remove-btn:hover {
+    background-color: #f1b0b7;
+    transform: translateY(-2px);
+}

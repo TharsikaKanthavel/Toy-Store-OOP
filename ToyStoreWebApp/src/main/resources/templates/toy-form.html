@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title th:text="${pageTitle} + ' - Toy Store'">Add/Edit Toy - Toy Store</title>
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Bootstrap Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css">
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" th:href="@{/css/styles.css}">
+</head>
+<body>
+
+<!-- Header/Navigation bar -->
+<div th:replace="fragments/header :: header"></div>
+
+<!-- Page Header -->
+<section class="py-4 bg-light">
+    <div class="container">
+        <div class="row align-items-center">
+            <div class="col-md-6">
+                <h2 class="mb-0" th:text="${pageTitle}">Add/Edit Toy</h2>
+                <nav aria-label="breadcrumb">
+                    <ol class="breadcrumb mb-0">
+                        <li class="breadcrumb-item"><a href="/">Home</a></li>
+                        <li class="breadcrumb-item"><a href="/toys">Toys</a></li>
+                        <li class="breadcrumb-item active" aria-current="page" th:text="${pageTitle}">Add/Edit Toy</li>
+                    </ol>
+                </nav>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Main Content -->
+<section class="py-5">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-lg-8">
+                <div class="form-container">
+                    <h3 class="form-title" th:text="${formAction == 'add' ? 'Add New Toy' : 'Edit Toy'}">Add/Edit Toy</h3>
+
+                    <form id="toyForm" th:attr="data-action=${formAction}, data-id=${toy.id}">
+                        <!-- Hidden ID field for edit mode -->
+                        <input type="hidden" id="toyId" th:value="${toy.id}">
+
+                        <div class="mb-3">
+                            <label for="toyName" class="form-label">Toy Name *</label>
+                            <input type="text" class="form-control" id="toyName" th:value="${toy.name}" required>
+                            <div class="invalid-feedback">Please enter a toy name.</div>
+                        </div>
+
+                        <div class="mb-3">
+                            <label for="toyDescription" class="form-label">Description *</label>
+                            <textarea class="form-control" id="toyDescription" rows="3" required th:text="${toy.description}"></textarea>
+                            <div class="invalid-feedback">Please enter a description.</div>
+                        </div>
+
+                        <div class="row">
+                            <div class="col-md-6 mb-3">
+                                <label for="toyPrice" class="form-label">Price ($) *</label>
+                                <input type="number" class="form-control" id="toyPrice" step="0.01" min="0.01" th:value="${toy.price}" required>
+                                <div class="invalid-feedback">Please enter a valid price.</div>
+                            </div>
+
+                            <div class="col-md-6 mb-3">
+                                <label for="toyQuantity" class="form-label">Quantity in Stock *</label>
+                                <input type="number" class="form-control" id="toyQuantity" min="0" th:value="${toy.quantity}" required>
+                                <div class="invalid-feedback">Please enter a valid quantity.</div>
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="col-md-6 mb-3">
+                                <label for="toyCategory" class="form-label">Category *</label>
+                                <select class="form-select" id="toyCategory" required>
+                                    <option value="" selected disabled>Select category</option>
+                                    <option th:each="category : ${categories}"
+                                            th:value="${category.name()}"
+                                            th:text="${category.displayName}"
+                                            th:selected="${toy.category != null && toy.category.name() == category.name()}">
+                                        Category
+                                    </option>
+                                </select>
+                                <div class="invalid-feedback">Please select a category.</div>
+                            </div>
+
+                            <div class="col-md-6 mb-3">
+                                <label for="toyAgeGroup" class="form-label">Age Group (min. age in years) *</label>
+                                <select class="form-select" id="toyAgeGroup" required>
+                                    <option value="" selected disabled>Select age group</option>
+                                    <option value="0" th:selected="${toy.ageGroup == 0}">0-2 years</option>
+                                    <option value="3" th:selected="${toy.ageGroup == 3}">3-5 years</option>
+                                    <option value="6" th:selected="${toy.ageGroup == 6}">6-8 years</option>
+                                    <option value="9" th:selected="${toy.ageGroup == 9}">9-12 years</option>
+                                    <option value="13" th:selected="${toy.ageGroup == 13}">13+ years</option>
+                                </select>
+                                <div class="invalid-feedback">Please select an age group.</div>
+                            </div>
+                        </div>
+
+                        <div class="mb-4">
+                            <label for="toyImageUrl" class="form-label">Image URL *</label>
+                            <input type="url" class="form-control" id="toyImageUrl" th:value="${toy.imageUrl}" required>
+                            <div class="form-text">Enter a URL for the toy image. Use a CDN or icon library URL.</div>
+                            <div class="invalid-feedback">Please enter a valid image URL.</div>
+                        </div>
+
+                        <div class="d-flex justify-content-between">
+                            <a href="/toys" class="btn btn-outline-secondary">Cancel</a>
+                            <button type="submit" class="btn btn-primary">
+                                <span th:if="${formAction == 'add'}">Add Toy</span>
+                                <span th:if="${formAction == 'edit'}">Save Changes</span>
+                            </button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Footer -->
+<div th:replace="fragments/footer :: footer"></div>
+
+<!-- Bootstrap JS -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+
+<!-- Custom JS -->
+<script th:src="@{/js/main.js}"></script>
+
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        // Toy form submission
+        const toyForm = document.getElementById('toyForm');
+
+        if (toyForm) {
+            toyForm.addEventListener('submit', function(event) {
+                event.preventDefault();
+
+                // Form validation
+                if (!validateForm()) {
+                    return;
+                }
+
+                // Get form data
+                const formData = {
+                    name: document.getElementById('toyName').value.trim(),
+                    description: document.getElementById('toyDescription').value.trim(),
+                    price: parseFloat(document.getElementById('toyPrice').value),
+                    quantity: parseInt(document.getElementById('toyQuantity').value),
+                    category: document.getElementById('toyCategory').value,
+                    ageGroup: parseInt(document.getElementById('toyAgeGroup').value),
+                    imageUrl: document.getElementById('toyImageUrl').value.trim()
+                };
+
+                // Determine if this is an add or edit operation
+                const action = toyForm.getAttribute('data-action');
+                const toyId = toyForm.getAttribute('data-id');
+
+                if (action === 'edit' && toyId) {
+                    formData.id = toyId;
+                    updateToy(formData);
+                } else {
+                    addToy(formData);
+                }
+            });
+        }
+
+        // Validate form fields
+        function validateForm() {
+            const toyName = document.getElementById('toyName');
+            const toyDescription = document.getElementById('toyDescription');
+            const toyPrice = document.getElementById('toyPrice');
+            const toyQuantity = document.getElementById('toyQuantity');
+            const toyCategory = document.getElementById('toyCategory');
+            const toyAgeGroup = document.getElementById('toyAgeGroup');
+            const toyImageUrl = document.getElementById('toyImageUrl');
+
+            let isValid = true;
+
+            // Clear previous validation
+            [toyName, toyDescription, toyPrice, toyQuantity, toyCategory, toyAgeGroup, toyImageUrl].forEach(el => {
+                el.classList.remove('is-invalid');
+            });
+
+            // Validate name
+            if (!toyName.value.trim()) {
+                toyName.classList.add('is-invalid');
+                isValid = false;
+            }
+
+            // Validate description
+            if (!toyDescription.value.trim()) {
+                toyDescription.classList.add('is-invalid');
+                isValid = false;
+            }
+
+            // Validate price
+            if (!toyPrice.value || parseFloat(toyPrice.value) <= 0) {
+                toyPrice.classList.add('is-invalid');
+                isValid = false;
+            }
+
+            // Validate quantity
+            if (!toyQuantity.value || parseInt(toyQuantity.value) < 0) {
+                toyQuantity.classList.add('is-invalid');
+                isValid = false;
+            }
+
+            // Validate category
+            if (!toyCategory.value) {
+                toyCategory.classList.add('is-invalid');
+                isValid = false;
+            }
+
+            // Validate age group
+            if (!toyAgeGroup.value) {
+                toyAgeGroup.classList.add('is-invalid');
+                isValid = false;
+            }
+
+            // Validate image URL
+            if (!toyImageUrl.value.trim()) {
+                toyImageUrl.classList.add('is-invalid');
+                isValid = false;
+            }
+
+            return isValid;
+        }
+
+        // Add a new toy
+        function addToy(toyData) {
+            fetch('/api/toys', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify(toyData)
+            })
+                .then(response => {
+                    if (!response.ok) {
+                        throw new Error('Failed to add toy');
+                    }
+                    return response.json();
+                })
+                .then(data => {
+                    // Redirect to toys page on success
+                    window.location.href = '/toys';
+                })
+                .catch(error => {
+                    console.error('Error adding toy:', error);
+                    window.showToast('Error adding toy. Please try again.', 'error');
+                });
+        }
+
+        // Update an existing toy
+        function updateToy(toyData) {
+            fetch(`/api/toys/${toyData.id}`, {
+                method: 'PUT',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify(toyData)
+            })
+                .then(response => {
+                    if (!response.ok) {
+                        throw new Error('Failed to update toy');
+                    }
+                    return response.json();
+                })
+                .then(data => {
+                    // Redirect to toys page on success
+                    window.location.href = '/toys';
+                })
+                .catch(error => {
+                    console.error('Error updating toy:', error);
+                    window.showToast('Error updating toy. Please try again.', 'error');
+                });
+        }
+    });
+</script>
+
+</body>
+</html>

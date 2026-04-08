@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Add New Toy - ToyLand Admin</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css" rel="stylesheet">
+  <link th:href="@{/css/style.css}" rel="stylesheet">
+</head>
+<body>
+
+<!-- Header -->
+<div th:replace="fragments/header :: header"></div>
+
+<!-- Main Content -->
+<div class="container py-4">
+  <!-- Breadcrumb Navigation -->
+  <nav aria-label="breadcrumb" class="mb-4">
+    <ol class="breadcrumb">
+      <li class="breadcrumb-item"><a href="/" class="text-decoration-none">Home</a></li>
+      <li class="breadcrumb-item"><a href="/admin/dashboard" class="text-decoration-none">Admin Dashboard</a></li>
+      <li class="breadcrumb-item"><a href="/admin/toys" class="text-decoration-none">Manage Toys</a></li>
+      <li class="breadcrumb-item active" aria-current="page">Add New Toy</li>
+    </ol>
+  </nav>
+
+  <div class="card shadow">
+    <div class="card-header py-3">
+      <h6 class="m-0 font-weight-bold text-primary">Add New Toy</h6>
+    </div>
+    <div class="card-body">
+      <form th:action="@{/admin/toys/add}" th:object="${toy}" method="post">
+        <div class="row mb-3">
+          <div class="col-md-6">
+            <label for="id" class="form-label">Toy ID*</label>
+            <input type="text" class="form-control" id="id" th:field="*{id}" required
+                   placeholder="e.g., T001 (must be unique)">
+            <div class="form-text">Enter a unique identifier for the toy.</div>
+          </div>
+          <div class="col-md-6">
+            <label for="name" class="form-label">Name*</label>
+            <input type="text" class="form-control" id="name" th:field="*{name}" required>
+          </div>
+        </div>
+
+        <div class="mb-3">
+          <label for="description" class="form-label">Description*</label>
+          <textarea class="form-control" id="description" th:field="*{description}" rows="3" required></textarea>
+        </div>
+
+        <div class="row mb-3">
+          <div class="col-md-4">
+            <label for="price" class="form-label">Price*</label>
+            <div class="input-group">
+              <span class="input-group-text">$</span>
+              <input type="number" class="form-control" id="price" th:field="*{price}" required
+                     step="0.01" min="0.01">
+            </div>
+          </div>
+          <div class="col-md-4">
+            <label for="category" class="form-label">Category*</label>
+            <input type="text" class="form-control" id="category" th:field="*{category}" required
+                   list="category-suggestions">
+            <datalist id="category-suggestions">
+              <option value="Action Figures">Action Figures</option>
+              <option value="Building Blocks">Building Blocks</option>
+              <option value="Dolls">Dolls</option>
+              <option value="Educational Toys">Educational Toys</option>
+              <option value="Games & Puzzles">Games & Puzzles</option>
+              <option value="Outdoor Toys">Outdoor Toys</option>
+              <option value="Remote Control">Remote Control</option>
+              <option value="Stuffed Animals">Stuffed Animals</option>
+            </datalist>
+          </div>
+          <div class="col-md-4">
+            <label for="ageGroup" class="form-label">Age Group*</label>
+            <input type="text" class="form-control" id="ageGroup" th:field="*{ageGroup}" required
+                   list="age-group-suggestions">
+            <datalist id="age-group-suggestions">
+              <option value="0-2 years">0-2 years</option>
+              <option value="3-5 years">3-5 years</option>
+              <option value="6-8 years">6-8 years</option>
+              <option value="9-12 years">9-12 years</option>
+              <option value="13+ years">13+ years</option>
+              <option value="All ages">All ages</option>
+            </datalist>
+          </div>
+        </div>
+
+        <div class="row mb-3">
+          <div class="col-md-6">
+            <label for="stockQuantity" class="form-label">Stock Quantity*</label>
+            <input type="number" class="form-control" id="stockQuantity" th:field="*{stockQuantity}" required
+                   min="0">
+          </div>
+          <div class="col-md-6">
+            <label for="imageUrl" class="form-label">Image URL*</label>
+            <input type="url" class="form-control" id="imageUrl" th:field="*{imageUrl}" required
+                   placeholder="https://example.com/image.jpg">
+          </div>
+        </div>
+
+        <div class="mb-3 form-check">
+          <input type="checkbox" class="form-check-input" id="featured" th:field="*{featured}">
+          <label class="form-check-label" for="featured">Featured product (shown on homepage)</label>
+        </div>
+
+        <div class="d-flex justify-content-between">
+          <a href="/admin/toys" class="btn btn-secondary">Cancel</a>
+          <button type="submit" class="btn btn-primary">
+            <i class="bi bi-save"></i> Save Toy
+          </button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+
+<!-- Footer -->
+<div th:replace="fragments/footer :: footer"></div>
+
+<!-- JavaScript -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+<script th:src="@{/js/main.js}"></script>
+
+</body>
+</html>

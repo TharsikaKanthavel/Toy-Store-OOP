@@ -1,0 +1,407 @@
+:root {
+    --primary: #FF6B6B;
+    --secondary: #4ECDC4;
+    --accent: #FFD166;
+    --dark: #292F36;
+    --light: #F7FFF7;
+    --shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: #f9f4ff;
+    background-image:
+            radial-gradient(circle at 10% 20%, rgba(255, 214, 102, 0.1) 0%, transparent 20%),
+            radial-gradient(circle at 90% 80%, rgba(78, 205, 196, 0.1) 0%, transparent 20%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    overflow: hidden;
+}
+
+.login-container {
+    position: relative;
+    width: 100%;
+    max-width: 1200px;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.login-box {
+    background-color: rgba(255, 255, 255, 0.95);
+    border-radius: 20px;
+    box-shadow: var(--shadow);
+    padding: 50px;
+    width: 100%;
+    max-width: 450px;
+    text-align: center;
+    position: relative;
+    z-index: 10;
+    border: 3px solid var(--primary);
+    animation: float 6s ease-in-out infinite;
+}
+
+@keyframes float {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-20px); }
+}
+
+.logo-container {
+    margin-bottom: 30px;
+}
+
+.logo {
+    width: 120px;
+    margin-bottom: 15px;
+    filter: drop-shadow(2px 2px 4px rgba(0,0,0,0.1));
+}
+
+h1 {
+    font-family: 'Fredoka One', cursive;
+    color: var(--primary);
+    margin-bottom: 10px;
+    font-size: 2rem;
+}
+
+p {
+    color: var(--dark);
+    opacity: 0.8;
+    margin-bottom: 30px;
+}
+
+.login-form {
+    width: 100%;
+}
+
+.input-group {
+    position: relative;
+    margin-bottom: 25px;
+}
+
+.input-group i {
+    position: absolute;
+    left: 15px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: var(--primary);
+    font-size: 1.1rem;
+}
+
+.input-group .toggle-password {
+    left: auto;
+    right: 15px;
+    cursor: pointer;
+}
+
+input {
+    width: 100%;
+    padding: 15px 15px 15px 45px;
+    border: 2px solid #eee;
+    border-radius: 12px;
+    font-size: 1rem;
+    transition: all 0.3s;
+    background-color: var(--light);
+}
+
+input:focus {
+    border-color: var(--primary);
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(255, 107, 107, 0.2);
+}
+
+/* Ultra-Playful Login Button */
+.toy-login-btn {
+    position: relative;
+    border: none;
+    background: none;
+    padding: 0;
+    cursor: pointer;
+    width: 100%;
+    margin-top: 30px;
+    perspective: 1000px;
+}
+
+.btn-wrapper {
+    position: relative;
+    background: linear-gradient(135deg, #FF9E7D, #FF6B6B);
+    color: white;
+    padding: 18px 30px;
+    border-radius: 16px;
+    font-size: 1.2rem;
+    font-weight: 700;
+    font-family: 'Fredoka One', cursive;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    transform-style: preserve-3d;
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    box-shadow: 0 10px 25px rgba(255, 107, 107, 0.4);
+    z-index: 2;
+    overflow: hidden;
+}
+
+.btn-text {
+    position: relative;
+    z-index: 3;
+    text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+}
+
+.btn-shadow {
+    position: absolute;
+    bottom: -8px;
+    left: 5%;
+    width: 90%;
+    height: 20px;
+    background: rgba(0,0,0,0.2);
+    border-radius: 50%;
+    filter: blur(10px);
+    z-index: 1;
+    transition: all 0.4s ease;
+}
+
+/* Toy Elements */
+.toy-elements {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 2;
+}
+
+.building-block {
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    background: #4ECDC4;
+    top: -10px;
+    left: 15%;
+    transform: rotate(45deg);
+    border: 2px solid white;
+    animation: float-up 4s infinite ease-in-out;
+}
+
+.teddy-bear {
+    position: absolute;
+    width: 24px;
+    height: 24px;
+    background: #FFD166;
+    border-radius: 50% 50% 50% 50% / 60% 60% 40% 40%;
+    bottom: -12px;
+    right: 20%;
+    animation: bounce 3s infinite ease-in-out;
+    box-shadow: inset -3px -3px 0 rgba(0,0,0,0.1);
+}
+
+.rubber-duck {
+    position: absolute;
+    width: 18px;
+    height: 18px;
+    background: #FFEE88;
+    border-radius: 50%;
+    top: 30%;
+    left: 80%;
+    animation: swim 5s infinite linear;
+}
+
+.balloon {
+    position: absolute;
+    width: 16px;
+    height: 24px;
+    background: #FF8E8E;
+    border-radius: 50% 50% 50% 50% / 60% 60% 40% 40%;
+    top: 10%;
+    right: 10%;
+    animation: float 6s infinite ease-in-out;
+}
+
+/* Sparkles */
+.sparkles {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    z-index: 1;
+}
+
+.sparkle {
+    position: absolute;
+    background: white;
+    border-radius: 50%;
+    opacity: 0;
+}
+
+.sparkle:nth-child(1) {
+    width: 4px;
+    height: 4px;
+    top: 20%;
+    left: 30%;
+}
+
+.sparkle:nth-child(2) {
+    width: 3px;
+    height: 3px;
+    top: 60%;
+    left: 50%;
+}
+
+.sparkle:nth-child(3) {
+    width: 5px;
+    height: 5px;
+    top: 40%;
+    left: 70%;
+}
+
+.sparkle:nth-child(4) {
+    width: 2px;
+    height: 2px;
+    top: 80%;
+    left: 20%;
+}
+
+/* Animations */
+@keyframes float-up {
+    0%, 100% { transform: translateY(0) rotate(45deg); }
+    50% { transform: translateY(-15px) rotate(45deg); }
+}
+
+@keyframes bounce {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-15px); }
+}
+
+@keyframes swim {
+    0% { transform: translateX(0) translateY(0); }
+    25% { transform: translateX(-10px) translateY(-5px); }
+    50% { transform: translateX(-20px) translateY(0); }
+    75% { transform: translateX(-10px) translateY(5px); }
+    100% { transform: translateX(0) translateY(0); }
+}
+
+@keyframes float {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-20px); }
+}
+
+/* Hover Effects */
+.toy-login-btn:hover .btn-wrapper {
+    transform: translateY(-5px) rotateX(15deg);
+    box-shadow: 0 15px 35px rgba(255, 107, 107, 0.6);
+    background: linear-gradient(135deg, #FF8E53, #FF6B6B);
+}
+
+.toy-login-btn:hover .btn-shadow {
+    transform: scale(0.9);
+    opacity: 0.8;
+}
+
+.toy-login-btn:hover .sparkle {
+    opacity: 0.8;
+    animation: sparkle-pop 0.8s ease-out;
+}
+
+@keyframes sparkle-pop {
+    0% { transform: scale(0); opacity: 0; }
+    50% { transform: scale(1.2); opacity: 0.8; }
+    100% { transform: scale(1); opacity: 0; }
+}
+
+/* Active State */
+.toy-login-btn:active .btn-wrapper {
+    transform: translateY(0) rotateX(0);
+    transition: all 0.1s ease;
+}
+
+.toy-login-btn:active .btn-shadow {
+    transform: scale(0.8);
+    opacity: 0.5;
+}
+.links {
+    margin-top: 25px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.links a {
+    color: var(--dark);
+    text-decoration: none;
+    font-size: 0.9rem;
+    transition: all 0.3s;
+    position: relative;
+}
+
+.links a:hover {
+    color: var(--primary);
+}
+
+.links a::after {
+    content: '';
+    position: absolute;
+    bottom: -2px;
+    left: 0;
+    width: 0;
+    height: 1px;
+    background: var(--primary);
+    transition: width 0.3s;
+}
+
+.links a:hover::after {
+    width: 100%;
+}
+
+/* Floating toys */
+.toy-balloon, .toy-car, .toy-teddy {
+    position: absolute;
+    background-size: contain;
+    background-repeat: no-repeat;
+    z-index: 1;
+    animation: float 6s ease-in-out infinite;
+    filter: drop-shadow(2px 4px 6px rgba(0,0,0,0.1));
+}
+
+.toy-balloon {
+    width: 80px;
+    height: 100px;
+    background-image: url('https://cdn-icons-png.flaticon.com/512/4474/4474909.png');
+    top: 15%;
+    left: 10%;
+    animation-delay: 0s;
+}
+
+.toy-car {
+    width: 100px;
+    height: 70px;
+    background-image: url('https://cdn-icons-png.flaticon.com/512/4474/4474924.png');
+    bottom: 20%;
+    right: 15%;
+    animation-delay: 0.5s;
+}
+
+.toy-teddy {
+    width: 90px;
+    height: 90px;
+    background-image: url('https://cdn-icons-png.flaticon.com/512/4474/4474886.png');
+    top: 60%;
+    left: 20%;
+    animation-delay: 1s;
+}
+
+@media (max-width: 768px) {
+    .login-box {
+        padding: 30px;
+        margin: 0 20px;
+    }
+
+    .toy-balloon, .toy-car, .toy-teddy {
+        display: none;
+    }
+}

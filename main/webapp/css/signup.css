@@ -1,0 +1,191 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Comic Sans MS', cursive, sans-serif;
+}
+
+body {
+    background-color: #f9f4ff;
+    background-image: url('https://example.com/toys-bg.png'); /* Replace with your toy background */
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+.signup-container {
+    background-color: rgba(255, 255, 255, 0.9);
+    border-radius: 20px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+    padding: 40px;
+    width: 100%;
+    max-width: 450px;
+    text-align: center;
+    border: 3px solid #4cc9f0;
+    position: relative;
+    overflow: hidden;
+}
+
+.signup-container::before {
+    content: "";
+    position: absolute;
+    top: -10px;
+    left: -10px;
+    right: -10px;
+    bottom: -10px;
+    border: 2px dashed #f72585;
+    border-radius: 25px;
+    z-index: -1;
+    animation: rotate 20s linear infinite;
+}
+
+@keyframes rotate {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+.logo {
+    width: 120px;
+    margin-bottom: 20px;
+}
+
+h1 {
+    color: #4cc9f0;
+    margin-bottom: 25px;
+    font-size: 28px;
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.1);
+}
+
+.form-row {
+    display: flex;
+    gap: 15px;
+    margin-bottom: 15px;
+}
+
+.input-group {
+    margin-bottom: 15px;
+    text-align: left;
+    flex: 1;
+}
+
+label {
+    display: block;
+    margin-bottom: 8px;
+    color: #666;
+    font-weight: bold;
+}
+
+input, select {
+    width: 100%;
+    padding: 12px 15px;
+    border: 2px solid #ddd;
+    border-radius: 10px;
+    font-size: 16px;
+    transition: all 0.3s;
+    background-color: #f8faff;
+}
+
+input:focus, select:focus {
+    border-color: #4cc9f0;
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(76, 201, 240, 0.2);
+}
+
+.btn {
+    background-color: #4cc9f0;
+    color: white;
+    border: none;
+    padding: 12px 20px;
+    border-radius: 10px;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: bold;
+    width: 100%;
+    transition: all 0.3s;
+    margin-top: 15px;
+}
+
+.btn:hover {
+    background-color: #3aa8cc;
+    transform: translateY(-2px);
+}
+
+.links {
+    margin-top: 20px;
+    text-align: center;
+}
+
+.links a {
+    color: #666;
+    text-decoration: none;
+    font-size: 14px;
+    transition: color 0.3s;
+    display: block;
+    margin-bottom: 8px;
+}
+
+.links a:hover {
+    color: #f72585;
+    text-decoration: underline;
+}
+
+.toy-decoration {
+    position: absolute;
+    width: 50px;
+    opacity: 0.7;
+}
+
+.toy1 {
+    top: 10px;
+    left: 10px;
+    width: 40px;
+    transform: rotate(-15deg);
+}
+
+.toy2 {
+    bottom: 10px;
+    right: 10px;
+    width: 45px;
+    transform: rotate(15deg);
+}
+
+.birthday-input {
+    display: flex;
+    gap: 10px;
+}
+
+.birthday-input select {
+    flex: 1;
+}
+
+.terms {
+    display: flex;
+    align-items: center;
+    margin: 15px 0;
+    text-align: left;
+}
+
+.terms input {
+    width: auto;
+    margin-right: 10px;
+}
+
+.terms label {
+    margin-bottom: 0;
+    color: #555;
+    font-weight: normal;
+}
+
+@media (max-width: 480px) {
+    .signup-container {
+        padding: 30px 20px;
+        margin: 0 15px;
+    }
+
+    .form-row {
+        flex-direction: column;
+        gap: 0;
+    }
+}

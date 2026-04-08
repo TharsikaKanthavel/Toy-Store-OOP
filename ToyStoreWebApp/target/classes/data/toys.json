@@ -1,0 +1,152 @@
+[
+  {
+    "id": "toy-001",
+    "name": "Super Action Hero",
+    "description": "Poseable action figure with 20 points of articulation. Comes with multiple accessories and weapons. Perfect for imaginative play and collecting.",
+    "price": 24.99,
+    "quantity": 15,
+    "category": "ACTION_FIGURES",
+    "ageGroup": 6,
+    "imageUrl": "https://cdn.pixabay.com/photo/2016/03/31/20/32/captain-1295859_1280.png"
+  },
+  {
+    "id": "toy-002",
+    "name": "Classic Wooden Blocks",
+    "description": "Set of 50 colorful wooden building blocks in various shapes and sizes. Great for developing motor skills and creativity in young children.",
+    "price": 19.99,
+    "quantity": 20,
+    "category": "EDUCATIONAL",
+    "ageGroup": 3,
+    "imageUrl": "https://cdn.pixabay.com/photo/2014/04/03/00/41/cube-309421_1280.png"
+  },
+  {
+    "id": "toy-003",
+    "name": "Galaxy Explorer Spaceship",
+    "description": "Build your own spaceship with this 200-piece building set. Features light-up engines, opening cockpit, and detachable landing module.",
+    "price": 34.99,
+    "quantity": 8,
+    "category": "BUILDING_SETS",
+    "ageGroup": 9,
+    "imageUrl": "https://cdn.pixabay.com/photo/2017/07/20/00/31/space-shuttle-2520935_1280.png"
+  },
+  {
+    "id": "toy-004",
+    "name": "Junior Doctor Kit",
+    "description": "Pretend play medical kit with stethoscope, thermometer, syringe, and other tools. Encourages role play and helps children understand healthcare.",
+    "price": 15.99,
+    "quantity": 12,
+    "category": "EDUCATIONAL",
+    "ageGroup": 3,
+    "imageUrl": "https://cdn.pixabay.com/photo/2014/04/03/11/58/first-aid-kit-312423_1280.png"
+  },
+  {
+    "id": "toy-005",
+    "name": "Strategy Master Board Game",
+    "description": "Classic strategy board game for 2-4 players. Develop critical thinking skills while having fun with family and friends. Average playtime: 60 minutes.",
+    "price": 29.99,
+    "quantity": 10,
+    "category": "BOARD_GAMES",
+    "ageGroup": 13,
+    "imageUrl": "https://cdn.pixabay.com/photo/2012/04/05/01/24/chess-25544_1280.png"
+  },
+  {
+    "id": "toy-006",
+    "name": "Plush Teddy Bear",
+    "description": "Super soft huggable teddy bear made with premium materials. Hypoallergenic and machine washable. Perfect for cuddling at bedtime.",
+    "price": 14.99,
+    "quantity": 25,
+    "category": "PLUSH_TOYS",
+    "ageGroup": 0,
+    "imageUrl": "https://cdn.pixabay.com/photo/2014/04/02/16/17/teddy-bear-306770_1280.png"
+  },
+  {
+    "id": "toy-007",
+    "name": "RC Racing Car",
+    "description": "High-speed remote control car with responsive controls and durable construction. Features LED lights and can perform stunts and flips.",
+    "price": 39.99,
+    "quantity": 7,
+    "category": "ELECTRONIC",
+    "ageGroup": 6,
+    "imageUrl": "https://cdn.pixabay.com/photo/2013/07/13/11/44/car-158548_1280.png"
+  },
+  {
+    "id": "toy-008",
+    "name": "Fashion Designer Doll",
+    "description": "Poseable fashion doll with 5 outfits and accessories. Includes fashion design sketchbook and fabric swatches for creative play.",
+    "price": 22.99,
+    "quantity": 14,
+    "category": "DOLLS",
+    "ageGroup": 6,
+    "imageUrl": "https://cdn.pixabay.com/photo/2021/01/04/03/04/doll-5887877_1280.png"
+  },
+  {
+    "id": "toy-009",
+    "name": "Outdoor Adventure Set",
+    "description": "Complete outdoor exploration kit with binoculars, compass, magnifying glass, and bug container. Perfect for young explorers and nature lovers.",
+    "price": 18.99,
+    "quantity": 9,
+    "category": "OUTDOOR",
+    "ageGroup": 6,
+    "imageUrl": "https://cdn.pixabay.com/photo/2019/06/13/11/28/camping-4271129_1280.png"
+  },
+  {
+    "id": "toy-010",
+    "name": "Musical Keyboard",
+    "description": "Beginner's electronic keyboard with 37 keys, 100 sounds, and 50 demo songs. Features recording function and headphone jack for quiet practice.",
+    "price": 45.99,
+    "quantity": 5,
+    "category": "ELECTRONIC",
+    "ageGroup": 9,
+    "imageUrl": "https://cdn.pixabay.com/photo/2019/01/01/15/30/keyboard-3907049_1280.png"
+  },
+  {
+    "id": "toy-011",
+    "name": "Dinosaur Excavation Kit",
+    "description": "Dig up and assemble a realistic dinosaur skeleton. Includes tools, brush, and educational booklet about prehistoric creatures.",
+    "price": 16.99,
+    "quantity": 11,
+    "category": "EDUCATIONAL",
+    "ageGroup": 9,
+    "imageUrl": "https://cdn.pixabay.com/photo/2012/04/13/14/55/tyrannosaurus-32872_1280.png"
+  },
+  {
+    "id": "toy-012",
+    "name": "Baby's First Blocks",
+    "description": "Soft fabric blocks with different textures, colors, and sounds. Perfect for sensory development in infants and babies.",
+    "price": 12.99,
+    "quantity": 18,
+    "category": "EDUCATIONAL",
+    "ageGroup": 0,
+    "imageUrl": "https://cdn.pixabay.com/photo/2013/07/13/10/24/cube-157323_1280.png"
+  },
+  {
+    "id": "toy-013",
+    "name": "Cooperative Adventure Game",
+    "description": "Family board game where players work together to overcome challenges. Promotes teamwork and problem-solving skills. 2-6 players.",
+    "price": 32.99,
+    "quantity": 6,
+    "category": "BOARD_GAMES",
+    "ageGroup": 9,
+    "imageUrl": "https://cdn.pixabay.com/photo/2014/04/03/10/28/board-game-310725_1280.png"
+  },
+  {
+    "id": "toy-014",
+    "name": "Superhero Costume Set",
+    "description": "High-quality costume with cape, mask, and wristbands. Machine washable and durable for everyday superhero adventures.",
+    "price": 26.99,
+    "quantity": 8,
+    "category": "DRESS_UP",
+    "ageGroup": 3,
+    "imageUrl": "https://cdn.pixabay.com/photo/2014/04/02/14/05/superhero-306111_1280.png"
+  },
+  {
+    "id": "toy-015",
+    "name": "Science Experiment Kit",
+    "description": "Perform 50+ amazing science experiments with this comprehensive kit. Includes lab equipment and detailed instruction manual.",
+    "price": 28.99,
+    "quantity": 7,
+    "category": "EDUCATIONAL",
+    "ageGroup": 9,
+    "imageUrl": "https://cdn.pixabay.com/photo/2018/08/01/08/37/chemistry-3576479_1280.png"
+  }
+]

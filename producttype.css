@@ -1,0 +1,102 @@
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600&display=swap');
+* {
+  font-family: "Quicksand", sans-serif;
+}
+body{
+  background-color: beige;
+}
+section {
+  max-width: 1180px;
+  margin: 0 auto;
+}
+h1 {
+  font-weight: 700;
+  text-align: center;
+  letter-spacing: 0.5rem;
+  text-transform: uppercase;
+  margin: 4rem 0 0 0;
+}
+.list {
+  background: #fff;
+  display: flex;
+  flex-wrap: wrap;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  padding:  0;
+  height: 500px;
+  width: 1200px;
+  gap: 20px;
+  border-radius: 20px;
+}
+.list > .product {
+  width: 250px;
+  float: left;
+  height: 400px;
+  background: #fff;
+  margin: 1%;
+  position: relative;
+}
+.product > div {
+  text-align: center;
+  position:left;
+  -webkit-transition: all 0.5s;
+  -o-transition: all 0.5s;
+  transition: all 0.5s;
+  bottom: 0;
+  height: 0;
+  overflow: hidden;
+  width: 100%;
+  margin: 0 auto;
+  border-radius:4px;
+}
+.product:hover > div {
+  position: absolute;
+  height: 300px;
+  background: rgba(255, 255, 255, 0.5);
+  
+}
+.product > img {
+  margin: 0 auto;
+  display: block;
+  -webkit-transition: all 0.5s;
+  -o-transition: all 0.5s;
+  transition: all 0.5s;
+  border-radius:20px;
+  width: 100%;
+  height: 350px;
+  background-color: #000;
+}
+.product:hover > img {
+  -webkit-filter: blur(3px) saturate(1.5);
+  filter: blur(3px) saturate(1.5);
+}
+.product > div > h2 {
+  border-bottom: 1px solid #818181;
+  padding: 0 0 1rem;
+}
+.descr {
+  font-size: 0.8rem;
+  padding: 2rem;
+  line-height: 1.2rem;
+  font-weight:600;
+}
+.product > div > a > p {
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  font-size: 1rem;
+  line-height: 2.4rem;
+  background: #000;
+  color: #fff;
+  position: absolute;
+  width: 100%;
+  bottom: 0;
+  margin: 0 auto !important;
+  -webkit-transition: all 0.2s;
+  -o-transition: all 0.2s;
+  transition: all 0.2s;
+}
+.product > div > a > p:hover {
+  filter:brightness(.9);
+  letter-spacing: 4px;
+}

@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+  <!-- This fragment is just for the IDE to recognize the Thymeleaf namespace -->
+</head>
+<body>
+<header th:fragment="header">
+  <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+    <div class="container">
+      <a class="navbar-brand" href="/">
+        <i class="bi bi-box-seam"></i> ToyLand
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarMain" aria-controls="navbarMain" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarMain">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+          <li class="nav-item">
+            <a class="nav-link" href="/">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/toys">Toys</a>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              Categories
+            </a>
+            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+              <li><a class="dropdown-item" href="/toys?category=Action%20Figures">Action Figures</a></li>
+              <li><a class="dropdown-item" href="/toys?category=Building%20Blocks">Building Blocks</a></li>
+              <li><a class="dropdown-item" href="/toys?category=Dolls">Dolls</a></li>
+              <li><a class="dropdown-item" href="/toys?category=Educational%20Toys">Educational Toys</a></li>
+              <li><a class="dropdown-item" href="/toys?category=Games%20%26%20Puzzles">Games & Puzzles</a></li>
+              <li><a class="dropdown-item" href="/toys?category=Outdoor%20Toys">Outdoor Toys</a></li>
+              <li><a class="dropdown-item" href="/toys?category=Remote%20Control">Remote Control</a></li>
+              <li><a class="dropdown-item" href="/toys?category=Stuffed%20Animals">Stuffed Animals</a></li>
+              <li><hr class="dropdown-divider"></li>
+              <li><a class="dropdown-item" href="/toys">All Categories</a></li>
+            </ul>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/admin/dashboard">Admin</a>
+          </li>
+        </ul>
+        <form class="d-flex me-2" action="/search" method="get">
+          <div class="input-group">
+            <input class="form-control" type="search" name="query" placeholder="Search toys..." aria-label="Search">
+            <button class="btn btn-light" type="submit">
+              <i class="bi bi-search"></i>
+            </button>
+          </div>
+        </form>
+        <a href="/cart" class="btn btn-outline-light position-relative">
+          <i class="bi bi-cart"></i>
+          <span class="badge bg-danger position-absolute top-0 start-100 translate-middle cart-badge">0</span>
+        </a>
+      </div>
+    </div>
+  </nav>
+</header>
+</body>
+</html>
